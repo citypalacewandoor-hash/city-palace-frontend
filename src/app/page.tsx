@@ -84,16 +84,15 @@ export default async function Home() {
     <>
       <HeroBanner banners={banners} />
       <FacilitiesSection facilities={facilities} />
-      <main className="my-[50px] sm:my-[72px]">
+      {/* Bottom margin stays tight on mobile: the footer supplies its own
+          top spacing and border, so a large mb here reads as dead space. */}
+      <main className="mt-[50px] mb-6 sm:mt-[72px] sm:mb-12">
         <div id="products">
           <ProductListSec
             title="Our Products"
             data={products}
             viewAllLink="/shop"
           />
-        </div>
-        <div className="max-w-frame mx-auto px-4 xl:px-0">
-          <hr className="h-[1px] border-t-black/10 my-10 sm:my-16" />
         </div>
       </main>
     </>

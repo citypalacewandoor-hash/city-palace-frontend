@@ -23,8 +23,8 @@ const socialsData: SocialNetworks[] = [
 
 const Footer = () => {
   return (
-    <footer className="mt-16 border-t border-black/5">
-      <div className="pt-12 pb-6 bg-[#FAF9F6] text-[#1a1a1a] px-4 md:px-6">
+    <footer className="mt-8 md:mt-16 border-t border-black/5">
+      <div className="pt-6 pb-6 md:pt-12 bg-[#FAF9F6] text-[#1a1a1a] px-4 md:px-6">
         <div className="max-w-frame mx-auto">
           <nav className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12 mb-12">
             
