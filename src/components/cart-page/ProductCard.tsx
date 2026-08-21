@@ -2,7 +2,7 @@
 
 import React from "react";
 import { PiTrashFill } from "react-icons/pi";
-import Image from "next/image";
+import ProductImage from "@/components/common/ProductImage";
 import Link from "next/link";
 import CartCounter from "@/components/ui/CartCounter";
 import { Button } from "../ui/button";
@@ -27,7 +27,7 @@ const ProductCard = ({ data }: ProductCardProps) => {
         href={`/shop/product/${data.id}/${data.name.split(" ").join("-")}`}
         className="bg-[#F0EEED] rounded-lg w-full min-w-[100px] max-w-[100px] sm:max-w-[124px] aspect-square overflow-hidden relative"
       >
-        <Image
+        <ProductImage
           src={data.srcUrl}
           fill
           sizes="124px"

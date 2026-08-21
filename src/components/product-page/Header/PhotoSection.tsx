@@ -1,7 +1,7 @@
 "use client";
 
 import { Product } from "@/types/product.types";
-import Image from "next/image";
+import ProductImage from "@/components/common/ProductImage";
 import React, { useState, useEffect } from "react";
 
 const PhotoSection = ({ data }: { data: Product }) => {
@@ -23,7 +23,7 @@ const PhotoSection = ({ data }: { data: Product }) => {
               className="relative bg-[#F0EEED] rounded-[13px] xl:rounded-[20px] w-full max-w-[111px] xl:max-w-[152px] max-h-[106px] xl:max-h-[167px] xl:min-h-[167px] aspect-square overflow-hidden"
               onClick={() => setSelected(photo)}
             >
-              <Image
+              <ProductImage
                 src={photo}
                 fill
                 sizes="152px"
@@ -38,7 +38,7 @@ const PhotoSection = ({ data }: { data: Product }) => {
       )}
 
       <div className="relative flex items-center justify-center bg-[#F0EEED] rounded-[13px] sm:rounded-[20px] w-full sm:w-96 md:w-full mx-auto h-full max-h-[530px] min-h-[330px] lg:min-h-[380px] xl:min-h-[530px] overflow-hidden mb-3 lg:mb-0">
-        <Image
+        <ProductImage
           src={selected}
           fill
           sizes="(max-width: 768px) 100vw, 444px"

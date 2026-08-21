@@ -116,7 +116,13 @@ const Footer = () => {
                 Find us at Wandoor, Malappuram. Click below to navigate or view on Google Maps.
               </p>
               
-              {/* Premium Google Map Iframe Embed */}
+              {/* Premium Google Map Iframe Embed.
+                  sandbox is load-bearing: without it the Maps embed hands off to
+                  the Google Maps app on Android, so Chrome prompts "…wants to
+                  access other apps and services on this device" on every page
+                  load (the Footer sits in the root layout). Leaving out
+                  allow-popups / allow-top-navigation blocks that handoff while
+                  the map itself still renders. */}
               <div className="w-full h-[160px] rounded-xl overflow-hidden shadow-sm border border-gray-200 mb-3 relative group">
                 <iframe
                   src={MAPS_EMBED_URL}
@@ -127,6 +133,7 @@ const Footer = () => {
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                   title="City Palace Residency Location Map"
+                  sandbox="allow-scripts allow-same-origin"
                 ></iframe>
               </div>
               <a

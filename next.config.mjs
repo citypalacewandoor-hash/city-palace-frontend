@@ -2,6 +2,8 @@
 const nextConfig = {
   images: {
     remotePatterns: [
+      { protocol: "https", hostname: "res.cloudinary.com", pathname: "/**" },
+      { protocol: "https", hostname: "city-palace-backend.onrender.com", pathname: "/**" },
       { protocol: "https", hostname: "**" },
       { protocol: "http", hostname: "localhost", port: "5001", pathname: "/**" },
       { protocol: "http", hostname: "localhost", port: "5000", pathname: "/**" },

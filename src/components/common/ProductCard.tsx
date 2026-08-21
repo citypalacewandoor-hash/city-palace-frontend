@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/image";
+import ProductImage from "@/components/common/ProductImage";
 import Link from "next/link";
 import { Product } from "@/types/product.types";
 
@@ -16,7 +16,7 @@ const ProductCard = ({ data, priority = false }: ProductCardProps) => {
       className="flex flex-col items-start aspect-auto group w-full h-full p-3 sm:p-4 rounded-[16px] sm:rounded-[24px] bg-white border border-gray-100 hover:shadow-xl hover:border-gray-200 transition-all duration-300"
     >
       <div className="relative bg-gray-50 rounded-[12px] sm:rounded-[18px] w-full aspect-square mb-3 overflow-hidden flex-shrink-0">
-        <Image
+        <ProductImage
           src={data.srcUrl}
           fill
           sizes="(max-width: 480px) 40vw, (max-width: 768px) 45vw, (max-width: 1024px) 40vw, 295px"

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import Image from "next/image";
+import ProductImage from "@/components/common/ProductImage";
 import InputGroup from "@/components/ui/input-group";
 import { useRouter, useSearchParams } from "next/navigation";
 import { API_URL as api } from "@/lib/utils";
@@ -130,7 +130,7 @@ const SearchInput = () => {
       <form onSubmit={handleSearch}>
         <InputGroup className="flex bg-[#f5f5f5] border border-black/5 h-11 pl-0">
           <InputGroup.Text className="absolute left-4 md:left-5 top-1/2 -translate-y-1/2 z-10 mr-0 pointer-events-none">
-            <Image
+            <ProductImage
               src="/icons/search.svg"
               alt="search"
               width={20}
@@ -177,7 +177,7 @@ const SearchInput = () => {
                   className="w-full flex items-center gap-3 p-3 hover:bg-[#F0F0F0] transition-colors text-left"
                 >
                   <div className="relative w-12 h-12 flex-shrink-0 rounded bg-[#F0F0F0] overflow-hidden">
-                    <Image src={p.srcUrl} alt={p.title} fill className="object-cover" unoptimized />
+                    <ProductImage src={p.srcUrl} alt={p.title} fill className="object-cover" unoptimized />
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="text-sm font-medium text-black truncate">{p.title}</p>
