@@ -23,18 +23,18 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Nadav Resorts & Events",
-  description: "Premium Resorts, Event Management, Destination Weddings, Corporate Events and Hospitality Services.",
-  keywords: "Resorts, Event Management, Destination Wedding, Resort Booking, Hospitality Services, Kerala Events",
+  title: "City Palace Residency",
+  description: "City Palace Residency, Wandoor — shop our range of products and items online. A Royal Experience.",
+  keywords: "City Palace Residency, Wandoor, Online Store, Products, Shopping, Kerala",
   openGraph: {
-    siteName: "Nadav Resorts & Events",
-    title: "Nadav Resorts & Events",
-    description: "Premium Resorts, Event Management, Destination Weddings, Corporate Events and Hospitality Services.",
+    siteName: "City Palace Residency",
+    title: "City Palace Residency",
+    description: "City Palace Residency, Wandoor — shop our range of products and items online. A Royal Experience.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nadav Resorts & Events",
-    description: "Premium Resorts, Event Management, Destination Weddings, Corporate Events and Hospitality Services.",
+    title: "City Palace Residency",
+    description: "City Palace Residency, Wandoor — shop our range of products and items online. A Royal Experience.",
   }
 };
 

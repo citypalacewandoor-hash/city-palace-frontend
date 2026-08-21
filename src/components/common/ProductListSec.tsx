@@ -38,6 +38,16 @@ const ProductListSec = ({ title, data, viewAllLink }: ProductListSecProps) => {
         viewport={{ once: true }}
         transition={{ delay: 0.6, duration: 0.6 }}
       >
+        {data.length === 0 ? (
+          <div className="w-full px-4 sm:px-0 mb-6 md:mb-9 py-12 border border-black/10 rounded-2xl bg-[#FAF9F6]">
+            <p className="text-base font-semibold text-gray-800">
+              No products to show right now
+            </p>
+            <p className="text-sm text-gray-500 mt-1">
+              Our store is being updated. Please check back in a moment.
+            </p>
+          </div>
+        ) : (
         <Carousel
           opts={{
             align: "start",
@@ -55,11 +65,12 @@ const ProductListSec = ({ title, data, viewAllLink }: ProductListSecProps) => {
             ))}
           </CarouselContent>
         </Carousel>
-        {viewAllLink && (
+        )}
+        {viewAllLink && data.length > 0 && (
           <div className="w-full px-4 sm:px-0 text-center">
             <Link
               href={viewAllLink}
-              className="w-full inline-block sm:w-[218px] px-[54px] py-3.5 border rounded-full hover:bg-[#FF8C00] hover:text-white text-black hover:border-transparent transition-all duration-300 font-semibold text-sm sm:text-base border-black/15 shadow-sm hover:shadow-md transform hover:-translate-y-[1px]"
+              className="w-full inline-block sm:w-[218px] px-[54px] py-3.5 border rounded-full hover:bg-[#D31018] hover:text-white text-black hover:border-transparent transition-all duration-300 font-semibold text-sm sm:text-base border-black/15 shadow-sm hover:shadow-md transform hover:-translate-y-[1px]"
             >
               View All
             </Link>

@@ -29,7 +29,7 @@ const TopNavbar = () => {
   }, []);
 
   const navItems = [
-    { id: 1, type: "MenuItem" as const, label: "Tarif", url: "/#tarif", children: [] },
+    { id: 1, type: "MenuItem" as const, label: "Products", url: "/#products", children: [] },
     { id: 3, type: "MenuItem" as const, label: "Contact", url: "/#contact", children: [] },
     { id: 4, type: "MenuItem" as const, label: "Location", url: "/#location", children: [] },
     { id: 5, type: "MenuItem" as const, label: "Our Facilities", url: "/shop", children: [] },
@@ -38,23 +38,23 @@ const TopNavbar = () => {
   return (
     <nav
       className={cn(
-        "z-50 sticky top-0 w-full bg-white/95 backdrop-blur-md shadow-sm border-b border-black/5 py-3 transition-all duration-300",
+        "z-50 sticky top-0 w-full min-h-[80px] flex items-center bg-white/95 backdrop-blur-md shadow-sm border-b border-black/5 py-3 transition-all duration-300",
         isScrolled && "shadow-md py-2.5 bg-white/98"
       )}
     >
-      <div className="flex relative max-w-frame mx-auto items-center justify-between px-4 xl:px-0 gap-3">
-        {/* Left: Logo & Brand Name */}
+      <div className="flex relative w-full max-w-frame mx-auto items-center justify-between px-4 xl:px-0 gap-3">
+        {/* Left: Logo */}
         <div className="flex items-center flex-shrink-0">
           <Link
             href="/"
             className="flex items-center gap-2"
           >
             <Image
-              src="/images/logo.jpg"
-              alt="Nadav Resorts & Events Logo"
-              width={200}
-              height={60}
-              className="rounded-lg object-contain transition-transform duration-300 hover:scale-105 h-11 sm:h-14 w-auto"
+              src="/images/city-palace-logo.png"
+              alt="City Palace Residency Logo"
+              width={600}
+              height={370}
+              className="rounded-lg object-contain transition-transform duration-300 hover:scale-105 h-[52px] sm:h-[60px] w-auto max-w-none"
               priority
             />
           </Link>
@@ -66,7 +66,7 @@ const TopNavbar = () => {
             <Link
               key={item.id}
               href={item.url}
-              className="text-xs xl:text-sm font-semibold text-gray-700 hover:text-white px-4 py-1.5 rounded-full border border-black/5 hover:bg-[#FF8C00] hover:border-transparent transition-all duration-200"
+              className="text-xs xl:text-sm font-semibold text-gray-700 hover:text-white px-4 py-1.5 rounded-full border border-black/5 hover:bg-[#D31018] hover:border-transparent transition-all duration-200"
             >
               {item.label}
             </Link>
@@ -83,7 +83,7 @@ const TopNavbar = () => {
           
           <Link 
             href="/shop" 
-            className="hidden lg:flex items-center justify-center text-xs xl:text-sm font-semibold text-white bg-[#1B5E20] hover:bg-[#154d19] px-6 h-11 rounded-full transition-all duration-200 whitespace-nowrap shadow-sm"
+            className="hidden lg:flex items-center justify-center text-xs xl:text-sm font-semibold text-white bg-[#0B1B4F] hover:bg-[#07123A] px-6 h-11 rounded-full transition-all duration-200 whitespace-nowrap shadow-sm"
           >
             Our Facilities
           </Link>

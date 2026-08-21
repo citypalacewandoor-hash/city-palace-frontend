@@ -31,12 +31,12 @@ const ProductCard = ({ data, priority = false }: ProductCardProps) => {
         {data.description || "Premium resort and booking services."}
       </p>
       <div className="flex items-center space-x-[5px] xl:space-x-2.5 mb-3 mt-auto">
-        <span className="font-bold text-[#FF8C00] text-sm sm:text-base lg:text-lg">
+        <span className="font-bold text-[#D31018] text-sm sm:text-base lg:text-lg">
           ₹{data.price}
         </span>
       </div>
       <div className="w-full">
-        <span className="w-full text-center block bg-[#FF8C00] text-white group-hover:bg-[#E67E00] font-semibold text-xs sm:text-sm py-2 sm:py-2.5 px-3 sm:px-4 rounded-full transition-all duration-300 truncate shadow-sm group-hover:shadow-md transform group-hover:-translate-y-[2px]">
+        <span className="w-full text-center block bg-[#D31018] text-white group-hover:bg-[#B00D14] font-semibold text-xs sm:text-sm py-2 sm:py-2.5 px-3 sm:px-4 rounded-full transition-all duration-300 truncate shadow-sm group-hover:shadow-md transform group-hover:-translate-y-[2px]">
           Enquiry Now
         </span>
       </div>

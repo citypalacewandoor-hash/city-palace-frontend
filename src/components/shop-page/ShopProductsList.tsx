@@ -4,6 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import ProductCard from "@/components/common/ProductCard";
 import { Product } from "@/types/product.types";
+import { API_URL as api } from "@/lib/utils";
+import { PRODUCT_IMAGE_PLACEHOLDER } from "@/lib/placeholder";
 import {
   Pagination,
   PaginationContent,
@@ -48,8 +50,7 @@ const ShopProductsList = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const searchParams = useSearchParams();
-  const api = process.env.NEXT_PUBLIC_API_URL;
-  const prevParamsRef = useRef<string | null>(null);
+    const prevParamsRef = useRef<string | null>(null);
   const allProductsCache = useRef<Product[]>([]);
   const cacheLoadedRef = useRef(false);
 
@@ -136,7 +137,7 @@ const ShopProductsList = () => {
               title: p.name,
               category: p.category?.name || "General",
               description: p.description || "No description available.",
-              srcUrl: v?.images?.[0] || "/images/pic1.png",
+              srcUrl: v?.images?.[0] || PRODUCT_IMAGE_PLACEHOLDER,
               gallery: v?.images || [],
               price: startingPrice,
               discount: { amount: 0, percentage: 0 },

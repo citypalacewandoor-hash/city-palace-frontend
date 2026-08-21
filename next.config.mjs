@@ -3,8 +3,13 @@ const nextConfig = {
   images: {
     remotePatterns: [
       { protocol: "https", hostname: "**" },
+      { protocol: "http", hostname: "localhost", port: "5001", pathname: "/**" },
+      { protocol: "http", hostname: "localhost", port: "5000", pathname: "/**" },
+      { protocol: "http", hostname: "127.0.0.1", port: "5001", pathname: "/**" },
       { protocol: "http", hostname: "localhost" },
     ],
+    unoptimized: true, // serve local upload streams directly, bypassing /_next/image
+    // Kept so flipping `unoptimized` back off restores the previous behaviour.
     formats: ["image/avif", "image/webp"],
     // Limit simultaneous image optimizations
     deviceSizes: [640, 750, 828, 1080, 1200, 1920],

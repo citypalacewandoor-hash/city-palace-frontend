@@ -4,6 +4,8 @@ import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import InputGroup from "@/components/ui/input-group";
 import { useRouter, useSearchParams } from "next/navigation";
+import { API_URL as api } from "@/lib/utils";
+import { PRODUCT_IMAGE_PLACEHOLDER } from "@/lib/placeholder";
 
 type Suggestion = {
   id: string;
@@ -19,13 +21,12 @@ const SearchInput = () => {
   const searchQuery = searchParams.get("search") || "";
 
   const [query, setQuery] = useState(searchQuery);
-  const [placeholder, setPlaceholder] = useState("Search Resorts, Events...");
+  const [placeholder, setPlaceholder] = useState("Search Products, Items...");
   const [suggestions, setSuggestions] = useState<Suggestion[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [showSuggestions, setShowSuggestions] = useState(false);
   const suggestionsRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
-  const api = process.env.NEXT_PUBLIC_API_URL;
 
   // Sync state when URL search param changes (like going back or page refresh)
   useEffect(() => {
@@ -38,7 +39,7 @@ const SearchInput = () => {
       if (window.innerWidth < 640) {
         setPlaceholder("Search...");
       } else {
-        setPlaceholder("Search Resorts, Events...");
+        setPlaceholder("Search Products, Items...");
       }
     };
     handleResize();
@@ -76,7 +77,7 @@ const SearchInput = () => {
                 title: p.name,
                 category: p.category?.name || "General",
                 price: v?.price || 0,
-                srcUrl: v?.images?.[0] || "/images/pic1.png",
+                srcUrl: v?.images?.[0] || PRODUCT_IMAGE_PLACEHOLDER,
               };
             })
           );

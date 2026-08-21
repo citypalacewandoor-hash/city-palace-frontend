@@ -61,14 +61,14 @@ export default function FacilitiesSection({ facilities }: Props) {
         .facility-card:hover {
           box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.01);
           transform: translateY(-6px);
-          border-color: rgba(255, 140, 0, 0.25);
+          border-color: rgba(211, 16, 24, 0.25);
         }
         .facility-icon-wrap {
           width: clamp(48px, 9vw, 64px);
           height: clamp(48px, 9vw, 64px);
           border-radius: clamp(12px, 2.2vw, 18px);
           background: #fffdf9;
-          border: 1.5px solid rgba(255, 140, 0, 0.2);
+          border: 1.5px solid rgba(211, 16, 24, 0.2);
           display: flex;
           align-items: center;
           justify-content: center;
@@ -79,7 +79,7 @@ export default function FacilitiesSection({ facilities }: Props) {
         .facility-card:hover .facility-icon-wrap {
           transform: scale(1.1) rotate(3deg);
           background: #fffaf0;
-          border-color: rgba(255, 140, 0, 0.5);
+          border-color: rgba(211, 16, 24, 0.5);
         }
         .facility-name {
           font-size: clamp(13px, 2.2vw, 15px);

@@ -2,11 +2,12 @@ import BreadcrumbProduct from "@/components/product-page/BreadcrumbProduct";
 import Header from "@/components/product-page/Header";
 import { Product, ProductVariant } from "@/types/product.types";
 import { notFound } from "next/navigation";
+import { API_URL as api } from "@/lib/utils";
+import { PRODUCT_IMAGE_PLACEHOLDER } from "@/lib/placeholder";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 60;
 
-const api = process.env.NEXT_PUBLIC_API_URL;
 
 async function getProduct(id: string): Promise<Product | null> {
   if (!api) return null;
@@ -48,7 +49,7 @@ async function getProduct(id: string): Promise<Product | null> {
       title: p.name,
       category: p.category?.name || "General",
       description: p.description || "No product description available.",
-      srcUrl: defaultVariant?.images?.[0] || "/images/pic1.png",
+      srcUrl: defaultVariant?.images?.[0] || PRODUCT_IMAGE_PLACEHOLDER,
       gallery: defaultVariant?.images || [],
       price: defaultVariant?.price || 0,
       discount: { amount: 0, percentage: 0 },

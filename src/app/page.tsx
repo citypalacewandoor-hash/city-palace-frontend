@@ -3,10 +3,11 @@ import HeroBanner from "@/components/homepage/Header";
 import FacilitiesSection from "@/components/homepage/FacilitiesSection";
 import { Product } from "@/types/product.types";
 import { Banner } from "@/types/banner.types";
+import { API_URL as api } from "@/lib/utils";
+import { PRODUCT_IMAGE_PLACEHOLDER } from "@/lib/placeholder";
 
 export const revalidate = 60;
 
-const api = process.env.NEXT_PUBLIC_API_URL;
 
 async function getProducts(): Promise<Product[]> {
   if (!api) return [];
@@ -28,7 +29,7 @@ async function getProducts(): Promise<Product[]> {
         title: p.name,
         category: p.category?.name || "General",
         description: p.description || "No description available.",
-        srcUrl: defaultVariant?.images?.[0] || "/images/pic1.png",
+        srcUrl: defaultVariant?.images?.[0] || PRODUCT_IMAGE_PLACEHOLDER,
         gallery: defaultVariant?.images || [],
         price: startingPrice,
         discount: { amount: 0, percentage: 0 },
@@ -84,9 +85,9 @@ export default async function Home() {
       <HeroBanner banners={banners} />
       <FacilitiesSection facilities={facilities} />
       <main className="my-[50px] sm:my-[72px]">
-        <div id="tarif">
+        <div id="products">
           <ProductListSec
-            title="Our Packages & Tarif"
+            title="Our Products"
             data={products}
             viewAllLink="/shop"
           />

@@ -2,6 +2,7 @@ import React from "react";
 import { FooterLinks } from "./footer.types";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { EMAIL, PHONE_DISPLAY, PHONE_HREF } from "@/lib/contact";
 
 const footerLinksData: FooterLinks[] = [
   {
@@ -10,13 +11,13 @@ const footerLinksData: FooterLinks[] = [
     children: [
       {
         id: 11,
-        label: "Email: Shameenaharis1272@gmail.com",
-        url: "mailto:Shameenaharis1272@gmail.com",
+        label: `Email: ${EMAIL}`,
+        url: `mailto:${EMAIL}`,
       },
       {
         id: 12,
-        label: "Contact Number: 9562321272",
-        url: "tel:9562321272",
+        label: `Contact Number: ${PHONE_DISPLAY}`,
+        url: PHONE_HREF,
       },
     ],
   },

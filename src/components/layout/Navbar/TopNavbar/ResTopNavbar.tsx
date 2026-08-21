@@ -38,8 +38,8 @@ const ResTopNavbar = ({ data }: { data: NavMenu }) => {
             <SheetClose asChild>
               <Link href="/" className="flex items-center gap-2">
                 <Image
-                  src="/images/logo.jpg"
-                  alt="Nadav Resorts & Events Logo"
+                  src="/images/city-palace-logo.png"
+                  alt="City Palace Residency Logo"
                   width={200}
                   height={60}
                   className="rounded-lg object-contain h-16 w-auto"

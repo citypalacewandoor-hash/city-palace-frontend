@@ -11,9 +11,10 @@ import React from "react";
 import { RootState } from "@/lib/store";
 import { useAppSelector } from "@/lib/hooks/redux";
 import Link from "next/link";
+import { WHATSAPP_NUMBER } from "@/lib/contact";
 
 // WhatsApp configuration
-const WHATSAPP_PHONE = process.env.NEXT_PUBLIC_WHATSAPP_PHONE; // Make sure to set this in .env.local
+const WHATSAPP_PHONE = process.env.NEXT_PUBLIC_WHATSAPP_PHONE || WHATSAPP_NUMBER;
 const WHATSAPP_MESSAGE = "Hi! I'd like to place an order through WhatsApp.";
 
 export default function CartPage() {

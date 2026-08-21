@@ -1,7 +1,9 @@
-import { cn } from "@/lib/utils";
-import { integralCF } from "@/styles/fonts";
 import { PaymentBadge, SocialNetworks } from "./footer.types";
-import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube, FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaYoutube, FaWhatsapp, FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
+import {
+  ADDRESS, ADDRESS_LOCAL, EMAIL, MAPS_EMBED_URL, MAPS_URL,
+  PHONE_DISPLAY, PHONE_HREF, SOCIAL, whatsappLink,
+} from "@/lib/contact";
 import Link from "next/link";
 import Image from "next/image";
 import LayoutSpacing from "./LayoutSpacing";
@@ -9,23 +11,23 @@ import LayoutSpacing from "./LayoutSpacing";
 const socialsData: SocialNetworks[] = [
   {
     id: 1,
-    icon: <FaTwitter />,
-    url: "https://twitter.com",
+    icon: <FaWhatsapp />,
+    url: whatsappLink(),
   },
   {
     id: 2,
     icon: <FaFacebookF />,
-    url: "https://www.facebook.com/share/1KqBBfzWnG/?mibextid=wwXIfr",
+    url: SOCIAL.facebook,
   },
   {
     id: 3,
     icon: <FaInstagram />,
-    url: "https://www.instagram.com/nadav.resorts?igsh=MTV2cnVrNWYxcGt5NQ%3D%3D&utm_source=qr",
+    url: SOCIAL.instagram,
   },
   {
     id: 4,
     icon: <FaYoutube />,
-    url: "https://youtube.com/@hafizfaizhafizfaiz-fz8rs?si=r-Srr8blF_wr3zjL",
+    url: SOCIAL.youtube,
   },
 ];
 
@@ -38,21 +40,18 @@ const Footer = () => {
             
             {/* Column 1: Brand & Socials */}
             <div className="flex flex-col lg:col-span-4">
-              <Link href="/" className="mb-4 inline-block w-fit">
+              <Link href="/" className="mb-6 inline-block w-fit">
                 <Image
-                  src="/images/logo.jpg"
-                  alt="Nadav Resorts & Events Logo"
-                  width={220}
-                  height={70}
-                  className="rounded-xl object-contain bg-white shadow-sm h-18 w-auto px-3 py-1.5"
+                  src="/images/city-palace-logo.png"
+                  alt="City Palace Residency Logo"
+                  width={600}
+                  height={370}
+                  className="rounded-xl object-contain bg-white shadow-sm h-[85px] w-auto max-w-[260px] px-3 py-2"
                   priority
                 />
               </Link>
-              <h3 className={cn([integralCF.className, "text-lg lg:text-xl mb-3 text-gray-900 font-bold"])}>
-                Palace's <span className="text-[#FF8C00]">NADAV</span>
-              </h3>
               <p className="text-gray-600 text-sm mb-6 max-w-sm leading-relaxed">
-                Premium destination for event management, luxury resort stays, destination weddings, and exceptional hospitality services in Wandoor, Kerala.
+                City Palace Residency, Wandoor — your online store for quality products and items, delivered with a royal experience.
               </p>
               <div className="flex items-center space-x-3">
                 {socialsData.map((social) => (
@@ -61,7 +60,7 @@ const Footer = () => {
                     key={social.id}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-white text-gray-700 hover:bg-[#FF8C00] hover:text-white transition-all w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center p-1.5 shadow-sm"
+                    className="bg-white text-gray-700 hover:bg-[#D31018] hover:text-white transition-all w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center p-1.5 shadow-sm"
                   >
                     {social.icon}
                   </Link>
@@ -76,28 +75,42 @@ const Footer = () => {
               </h4>
               <ul className="space-y-4 text-sm text-gray-600">
                 <li className="flex items-start gap-3">
-                  <FaMapMarkerAlt className="text-[#FF8C00] mt-1 flex-shrink-0" />
+                  <FaMapMarkerAlt className="text-[#D31018] mt-1 flex-shrink-0" />
                   <div>
                     <strong className="text-gray-900 block font-semibold">Address:</strong>
-                    <span>Ambalappadi, Wandoor, PIN: 679328</span>
-                    <span className="block text-xs text-gray-500 mt-0.5">(അമ്പലപ്പടി, വണ്ടൂർ)</span>
+                    <span>{ADDRESS}</span>
+                    <span className="block text-xs text-gray-500 mt-0.5">{ADDRESS_LOCAL}</span>
                   </div>
                 </li>
                 <li className="flex items-center gap-3">
-                  <FaPhoneAlt className="text-[#FF8C00] flex-shrink-0" />
+                  <FaPhoneAlt className="text-[#D31018] flex-shrink-0" />
                   <div>
                     <strong className="text-gray-900 block font-semibold">Phone:</strong>
-                    <a href="tel:+919447105944" className="hover:text-[#FF8C00] transition-colors">
-                      +91 94471 05944
+                    <a href={PHONE_HREF} className="hover:text-[#D31018] transition-colors">
+                      {PHONE_DISPLAY}
                     </a>
                   </div>
                 </li>
                 <li className="flex items-center gap-3">
-                  <FaEnvelope className="text-[#FF8C00] flex-shrink-0" />
+                  <FaEnvelope className="text-[#D31018] flex-shrink-0" />
                   <div>
                     <strong className="text-gray-900 block font-semibold">Email:</strong>
-                    <a href="mailto:info@nadavresorts.com" className="hover:text-[#FF8C00] transition-colors">
-                      info@nadavresorts.com
+                    <a href={`mailto:${EMAIL}`} className="hover:text-[#D31018] transition-colors">
+                      {EMAIL}
+                    </a>
+                  </div>
+                </li>
+                <li className="flex items-center gap-3">
+                  <FaWhatsapp className="text-[#D31018] flex-shrink-0" />
+                  <div>
+                    <strong className="text-gray-900 block font-semibold">WhatsApp:</strong>
+                    <a
+                      href={whatsappLink("Hello City Palace Residency, I'd like to know more.")}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-[#D31018] transition-colors"
+                    >
+                      Chat with us on WhatsApp
                     </a>
                   </div>
                 </li>
@@ -110,27 +123,27 @@ const Footer = () => {
                 Our Location
               </h4>
               <p className="text-sm text-gray-600 mb-3">
-                Find us at Ambalappadi, Wandoor. Click below to navigate or view on Google Maps.
+                Find us at Wandoor, Malappuram. Click below to navigate or view on Google Maps.
               </p>
               
               {/* Premium Google Map Iframe Embed */}
               <div className="w-full h-[160px] rounded-xl overflow-hidden shadow-sm border border-gray-200 mb-3 relative group">
                 <iframe
-                  src="https://maps.google.com/maps?q=11.207972,76.233894&z=15&output=embed"
+                  src={MAPS_EMBED_URL}
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
                   allowFullScreen={true}
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Nadav Resorts Location Map"
+                  title="City Palace Residency Location Map"
                 ></iframe>
               </div>
               <a
-                href="https://maps.google.com/?q=11.207972,76.233894"
+                href={MAPS_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-xs font-semibold text-[#1B5E20] hover:text-[#FF8C00] transition-colors w-fit"
+                className="inline-flex items-center gap-2 text-xs font-semibold text-[#0B1B4F] hover:text-[#D31018] transition-colors w-fit"
               >
                 <FaMapMarkerAlt /> Open in Google Maps
               </a>
@@ -141,8 +154,8 @@ const Footer = () => {
           <hr className="h-[1px] border-t border-black/5 my-6" />
           
           <div className="flex flex-col sm:flex-row justify-between items-center text-xs text-gray-500 gap-3">
-            <p>© {new Date().getFullYear()} Palace's NADAV Resorts & Events. All rights reserved.</p>
-            <p>Ambalappadi, Wandoor, Kerala</p>
+            <p>© {new Date().getFullYear()} City Palace Residency. All rights reserved.</p>
+            <p>Wandoor, Kerala — PIN: 679328</p>
           </div>
         </div>
         <LayoutSpacing />

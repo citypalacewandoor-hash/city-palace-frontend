@@ -10,6 +10,7 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import { toggleCategory } from "@/lib/features/filters/filtersSlice";
 import type { RootState } from "@/lib/store";
+import { API_URL as api } from "@/lib/utils";
 
 type Category = { _id?: string; name: string; slug: string };
 
@@ -18,7 +19,6 @@ const CategoriesSection = () => {
   const [loading, setLoading] = useState(true);
   const dispatch = useDispatch();
   const selectedCategories = useSelector((state: RootState) => state.filters.categories);
-  const api = process.env.NEXT_PUBLIC_API_URL;
 
   useEffect(() => {
     if (!api) { setLoading(false); return; }
