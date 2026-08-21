@@ -1,5 +1,5 @@
 import { PaymentBadge, SocialNetworks } from "./footer.types";
-import { FaFacebookF, FaInstagram, FaYoutube, FaWhatsapp, FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
+import { FaFacebookF, FaWhatsapp, FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import {
   ADDRESS, ADDRESS_LOCAL, EMAIL, MAPS_EMBED_URL, MAPS_URL,
   PHONE_DISPLAY, PHONE_HREF, SOCIAL, whatsappLink,
@@ -18,16 +18,6 @@ const socialsData: SocialNetworks[] = [
     id: 2,
     icon: <FaFacebookF />,
     url: SOCIAL.facebook,
-  },
-  {
-    id: 3,
-    icon: <FaInstagram />,
-    url: SOCIAL.instagram,
-  },
-  {
-    id: 4,
-    icon: <FaYoutube />,
-    url: SOCIAL.youtube,
   },
 ];
 

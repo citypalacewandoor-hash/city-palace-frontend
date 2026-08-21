@@ -17,8 +17,6 @@ export const MAPS_EMBED_URL =
 
 export const SOCIAL = {
   facebook: "https://www.facebook.com/citypalacewandoor",
-  instagram: "https://www.instagram.com/citypalacewandoor",
-  youtube: "https://youtube.com/@hafizfaizhafizfaiz-fz8rs?si=r-Srr8blF_wr3zjL",
 };
 
 /** Direct WhatsApp chat link, optionally pre-filled with a message. */
