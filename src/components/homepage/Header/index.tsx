@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import Image from "next/image";
+import ProductImage from "@/components/common/ProductImage";
 import { motion, AnimatePresence } from "framer-motion";
 import { Banner } from "@/types/banner.types";
 
@@ -48,7 +48,7 @@ export default function HeroBanner({ banners = [] }: HeroBannerProps) {
               there are no letterbox bars on any screen size. */}
 
           {/* Desktop Banner: screens >= 768px */}
-          <Image
+          <ProductImage
             src={current.desktopImage}
             alt="City Palace Residency"
             width={1920}
@@ -58,9 +58,12 @@ export default function HeroBanner({ banners = [] }: HeroBannerProps) {
             priority
           />
 
-          {/* Mobile Banner: screens < 768px */}
-          <Image
-            src={current.mobileImage}
+          {/* Mobile Banner: screens < 768px.
+              Falls back to the desktop image: uploading only the desktop asset
+              is an easy miss in the admin panel, and a cropped-wide banner
+              still beats a broken image on phones. */}
+          <ProductImage
+            src={current.mobileImage || current.desktopImage}
             alt="City Palace Residency Mobile"
             width={1080}
             height={810}

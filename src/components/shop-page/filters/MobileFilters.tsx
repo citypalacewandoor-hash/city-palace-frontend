@@ -20,9 +20,13 @@ const MobileFilters = () => {
       <DrawerTrigger asChild>
         <button
           type="button"
-          className="h-8 w-8 rounded-full bg-[#F0F0F0] text-black p-1 md:hidden"
+          aria-label="Open category and price filters"
+          className="md:hidden inline-flex items-center gap-2 rounded-full bg-[#D31018] px-4 py-2.5 text-white shadow-sm transition-transform active:scale-95"
         >
-          <FiSliders className="text-base mx-auto" />
+          <FiSliders className="text-base shrink-0" />
+          <span className="text-sm font-semibold whitespace-nowrap">
+            Filter / Categories
+          </span>
         </button>
       </DrawerTrigger>
       <DrawerContent className="max-h-[90%]">
