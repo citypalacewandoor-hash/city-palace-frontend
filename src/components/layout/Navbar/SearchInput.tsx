@@ -21,7 +21,7 @@ const SearchInput = () => {
   const searchQuery = searchParams.get("search") || "";
 
   const [query, setQuery] = useState(searchQuery);
-  const [placeholder, setPlaceholder] = useState("Search Products, Items...");
+  const [placeholder, setPlaceholder] = useState("Search Packages, Tariff...");
   const [suggestions, setSuggestions] = useState<Suggestion[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [showSuggestions, setShowSuggestions] = useState(false);
@@ -39,7 +39,7 @@ const SearchInput = () => {
       if (window.innerWidth < 640) {
         setPlaceholder("Search...");
       } else {
-        setPlaceholder("Search Products, Items...");
+        setPlaceholder("Search Packages, Tariff...");
       }
     };
     handleResize();

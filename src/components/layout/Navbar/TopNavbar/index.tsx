@@ -29,7 +29,7 @@ const TopNavbar = () => {
   }, []);
 
   const navItems = [
-    { id: 1, type: "MenuItem" as const, label: "Products", url: "/#products", children: [] },
+    { id: 1, type: "MenuItem" as const, label: "Tariff", url: "/#products", children: [] },
     { id: 3, type: "MenuItem" as const, label: "Contact", url: "/#contact", children: [] },
     { id: 4, type: "MenuItem" as const, label: "Location", url: "/#location", children: [] },
     { id: 5, type: "MenuItem" as const, label: "Our Facilities", url: "/shop", children: [] },

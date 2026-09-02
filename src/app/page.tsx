@@ -89,7 +89,7 @@ export default async function Home() {
       <main className="mt-[50px] mb-6 sm:mt-[72px] sm:mb-12">
         <div id="products">
           <ProductListSec
-            title="Our Products"
+            title="OUR PACKAGES TARIFF"
             data={products}
             viewAllLink="/shop"
           />
